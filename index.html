@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Income Tax Computation Statement FY 2024-25</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="income.css">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#c62828">
+</head>
+<body>
+<div class="container">
+  <div class="no-print" style="text-align:center;margin-bottom:10px;">
+  <select id="financialYear" onchange="changeYear()">
+    <option value="2024-25">FY 2024-25</option>
+    <option value="2025-26">FY 2025-26</option>
+    <option value="2026-27">FY 2026-27</option>
+  </select>
+</div>
+
+  <h2>INCOME TAX COMPUTATION STATEMENT</h2>
+<h3>FOR THE FINANCIAL YEAR 2024-25</h3>
+<h3>(Assessment Year 2025-26)</h3>
+<br>
+
+<table>
+
+<tr>
+<td style="width:25%;text-align:left !important;">
+Name & Designation of the employee
+</td>
+
+<td style="width:35%;">
+<input class="text" placeholder="e.g Bijush Kumar Roy">
+</td>
+
+<td style="width:20%;">
+PAN of the employee
+</td>
+
+<td style="width:20%;">
+<input class="text" placeholder="DBQPR1787H">
+</td>
+</tr>
+
+
+<tr>
+<td style="width:20%;text-align:left !important;">
+Name & address of the Office
+</td>
+
+<td style="width:40%;">
+<textarea class="text" placeholder="Vill:Rattanpur, P.O: Nunapani, dist: Cachar"
+rows="2"
+style="width:100%; resize:none;">
+</textarea>
+</td>
+
+<td style="width:20%;">
+TAN of the DDO
+</td>
+
+<td style="width:20%;">
+<input class="text" style="width:100%;">
+</td>
+</tr>
+
+</table>
+
+<table>
+<tr>
+<th style="width:5%;">Sl</th>
+<th style="width:70%;">Particulars</th>
+<th style="width:25%;">Amount (₹)</th>
+</tr>
+
+<tr>
+<td>1a</td>
+<td>Gross salary received during the year</td>
+<td><input type="number" id="g1a" placeholder="434953"></td>
+</tr><tr>
+<td>1b</td>
+<td>Arrear Salary of previous year(s)</td>
+<td><input type="number" id="g1b" placeholder="2164"></td>
+</tr><tr>
+<td>2</td>
+<td style="text-align:right !important;">Total (1a + 1b)</td>
+<td><input id="t2" readonly></td>
+</tr><tr>
+<td>3</td>
+<td>Deduction of allowance(s) to the extent exempt u/s 10(14)</td>
+<td class="nil">Nil</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Deduct HRA u/s 10(13A)</td>
+<td class="nil"> Nil</td>
+</tr><tr>
+<td>5</td>
+<td style="text-align:right !important;">Total (2 − 3 − 4)</td>
+<td><input id="t5" readonly></td>
+</tr>
+<!-- 6 -->
+<tr>
+  <td rowspan="3">6</td>
+  <td>Standard Deduction u/s 16(ia)</td>
+  <td><input id="std" value="75000" readonly></td>
+</tr>
+
+<tr>
+  <td style="text-align:left !important;">Entertainment allowance u/s 16(ii)</td>
+  <td class="nil">Nil</td>
+</tr>
+
+<tr>
+  <td style="text-align:left !important;">Tax on employment u/s 16 (iii) / Professional Tax</td>
+  <td><input type="number" placeholder="2496" id="ptax"></td>
+</tr>
+
+<!-- 7 Total -->
+<tr>
+  <td>7</td>
+  <td style="text-align:right !important;">Total</td>
+  <td><input id="t7" readonly></td>
+</tr>
+
+<tr>
+<td>8</td>
+<td>Add any other income reported by the employce</td>
+<td><input type="number" id="i8"></td>
+</tr><tr>
+<td>9</td>
+<td style="text-align:right !important;">Gross Total Income (5 − 7 + 8)</td>
+<td><input id="t9" readonly></td>
+</tr>
+<tr>
+  <td rowspan="3">10</td>
+  <td>
+   <b>Deduction under:</b><br>
+    Section-80D, 80DD, 80DDB, 80E, 80G, 80U etc.
+  </td>
+  <td class="nil">Nil</td>
+</tr>
+
+<tr>
+  <td style="text-align:left !important;">
+    Section-24(i): Interest amount of Housing loan / H.B. Advance
+  </td>
+  <td class="nil">Nil</td>
+</tr>
+
+<tr>
+  <td style="text-align:left !important;">
+    Section-80TTA: Interest earned on deposit in saving account (max ₹10,000)
+  </td>
+  <td class="nil">Nil</td>
+</tr>
+
+<tr>
+  <td>11</td>
+  <td style="text-align:right !important;">Total</td>
+  <td><input id="t11" value="0" readonly></td>
+</tr>
+
+
+<tr>
+  <td rowspan="4">12</td>
+  <td>
+   <b>Deduction under Chapter VI-A</b><br>
+    A) Section 80C(GPF, GIS, LIC, NSC, HBA, ULIP, PPF, PLI, FD, MF, Tuition Fees, CTD, Infrastructure Bonds, Sukanya Samriddhi Account etc.
+  </td>
+  <td class="nil">Nil</td>
+</tr>
+
+<tr>
+  <td style="text-align:left !important;">
+    B) Section80CCD(1): Employee's contribution to NPS
+  </td>
+<td><input type="number" placeholder="40942" id="d12"></td>
+</tr>
+
+<tr>
+  <td style="text-align:left !important;">
+    C) Section 80CCC:Contribution to certain Pension Funds
+  </td>
+  <td class="nil">Nil</td>
+</tr>
+<tr>
+  <td style="text-align:left !important;">
+D) Employers contribution to NPS 80CCD(2)
+  </td>
+  <td class="nil"></td>
+</tr>
+
+
+
+<tr>
+<td>13</td>
+<td style="text-align:right !important;">Total</td>
+<td><input id="t13" readonly></td>
+</tr>
+
+<tr>
+<td>14</td>
+<td>Section 80CCD(1B): Addl. Deduction for contribution to NPS made by the employee up to 50,000/-</td>
+<td class="nil"> Nil</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Net taxable income of the year (9-11-13-14)</td>
+<td><input id="t15" readonly></td>
+</tr>
+<tr>
+<td>16</td>
+<td>Tax on total income</td>
+<td><input type="number" id="tax16"></td>
+</tr><tr>
+<td>17</td>
+<td>Tax rebate (up to 220,000 for net taxable income upto ₹7.00 lakhs u/s 87-A)</td>
+<td><input type="number" id="rebate17"></td>
+</tr>
+<tr>
+<td>18</td>
+<td>Tax Payable (16 − 17)</td>
+<td><input id="t18" readonly></td>
+</tr>
+<tr>
+<td>19</td>
+<td>Health &Educational cess @4% of income tax</td>
+<td><input id="t19" readonly></td>
+</tr>
+<tr>
+<td>20</td>
+<td>Relief u/s 89(1) (attach details)</td>
+<td><input type="number" id="relief20"></td>
+</tr><tr>
+<td>21</td>
+<td>Tax Payable (18+19-20)</td>
+<td><input id="t21" readonly></td>
+</tr><tr>
+<td>22</td>
+<td>Tax deducted at source u/s 192(1)</td>
+<td><input type="number" id="tds22"></td>
+</tr><tr>
+<td>23</td>
+<td>Tax Payable/Refundable(21-22)</td>
+<td><input id="t23" readonly></td>
+</tr>
+</table>
+<div style="height:6px;"></div>
+
+<table class="dTable">
+<tr>
+<td>
+
+I,
+<input type="text" class="emp-name">
+(Name of the employee),
+
+do hereby declare that what is stated above is true
+to the best of my information and belief.
+
+</td>
+</tr>
+</table>
+
+
+<div class="signature-row">
+
+  <div class="sign-col">
+<div class="emp-sign-box">
+
+  <!-- Upload button -->
+  <input type="file"
+         accept="image/*"
+         onchange="loadEmpSignature(event)"
+         class="no-print"
+         style="margin-bottom:6px;">
+
+  <!-- Signature preview -->
+  <img id="empSignPreview" class="emp-sign-img">
+
+  <!-- Line -->
+  <div class="sign-line"></div>
+
+  <!-- Text -->
+  <div class="sign-text">Signature of Employee</div>
+
+</div>
+
+  </div>
+
+  <div class="sign-col">
+
+    <div class="sign-line"></div>
+    <div class="sign-text">DDO Signature & Seal</div>
+
+  </div>
+
+</div>
+<div style="text-align:center; margin-top:20px;" class="no-print">
+  <button onclick="printForm()">Print</button>
+
+</div>
+<div id="floatingLabel" class="field-label"></div>
+</div>
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("sw.js")
+    .then(() => console.log("SW Registered"));
+}
+</script>
+<script src="income.js"></script>
+
+</body>
+</html>
